@@ -1,0 +1,36 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+
+		"outDir": "./dist",
+		"rootDir": ".",
+
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+
+		"baseUrl": ".",
+
+		"esModuleInterop": true,
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"useUnknownInCatchVariables": true,
+
+		"types": [],
+		"paths": {
+			"@/*": ["*"],
+			"@utils": ["./src/utils"],
+			"@classes": ["./src/utils/classes"],
+			"@decorators": ["./src/utils/decorators"],
+			"@errors": ["./src/utils/errors"],
+			"@functions": ["./src/utils/functions"],
+			"@guards": ["./src/utils/guards"],
+			"@services": ["./src/services"],
+			"@types": ["./src/types"]
+		}
+	},
+	"include": ["src/**/*.ts", "src/**/*.d.ts"],
+	"exclude": ["./dist", "node_modules"]
+}
