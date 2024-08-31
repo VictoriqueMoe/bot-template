@@ -1,4 +1,6 @@
-import { singleton } from 'tsyringe';
+import {singleton} from 'tsyringe';
+import {BaseMessageOptions} from "discord.js";
+import ora from "ora";
 
 @singleton()
 export class Logger {

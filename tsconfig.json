@@ -15,21 +15,9 @@
 		"moduleResolution": "node",
 		"resolveJsonModule": true,
 		"forceConsistentCasingInFileNames": true,
+		"allowSyntheticDefaultImports": true,
 		"strict": true,
-		"useUnknownInCatchVariables": true,
-
-		"types": [],
-		"paths": {
-			"@/*": ["*"],
-			"@utils": ["./src/utils"],
-			"@classes": ["./src/utils/classes"],
-			"@decorators": ["./src/utils/decorators"],
-			"@errors": ["./src/utils/errors"],
-			"@functions": ["./src/utils/functions"],
-			"@guards": ["./src/utils/guards"],
-			"@services": ["./src/services"],
-			"@types": ["./src/types"]
-		}
+		"useUnknownInCatchVariables": true
 	},
 	"include": ["src/**/*.ts", "src/**/*.d.ts"],
 	"exclude": ["./dist", "node_modules"]

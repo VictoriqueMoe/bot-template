@@ -1,20 +1,14 @@
-import { Logger } from "@services";
-import { Events } from "discord.js";
-import {
-	type ArgsOf,
-	type Client,
-	Discord,
-	MetadataStorage,
-	On,
-	Once,
-} from "discordx";
-import { container, injectable } from "tsyringe";
+import {Events} from "discord.js";
+import {type ArgsOf, Client, Discord, MetadataStorage, On, Once,} from "discordx";
+import {inject, injectable} from "tsyringe";
+import {Logger} from "../../services/index.js";
 
 @Discord()
 @injectable()
 export class BaseEvents {
     constructor(
-         private readonly logger: Logger
+		private readonly logger: Logger,
+		@inject("config") private readonly config: any
     ){}
 
 
@@ -22,10 +16,9 @@ export class BaseEvents {
 		event: Events.ClientReady,
 	})
 	readyHandler([client]: [Client]) {
-		const config = container.resolve("config") as any;
 
 		console.log(`>> Logged in as ${client.user?.username}`);
-		client.clearApplicationCommands(config.guild_id);
+		client.clearApplicationCommands(this.config.guild_id);
 		client.initApplicationCommands();
 
 		MetadataStorage.instance.applicationCommands.forEach((command: any) => {
